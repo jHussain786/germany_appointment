@@ -26,6 +26,12 @@ while True:
                     send_email = True
         if(send_email != True):
             print("NOT FOUND \n")
+            s = smtplib.SMTP('smtp.gmail.com', 587)
+            s.starttls()
+            s.login("jamillaghari2000@gmail.com", "dmqb xkcd yikn ewtb")
+            message = "The appointments for germany are open please go to this website to fill for me \nhttps://service2.diplo.de/rktermin/extern/appointment_showForm.do?locationCode=isla&realmId=108&categoryId=1600 \npassport no: KA6919401 telephone: 03485947677"
+            s.sendmail("jamillaghari2000@gmail.com", "jamillaghari2000@gmail.com", message)
+            sleep(120)
         else:
             s = smtplib.SMTP('smtp.gmail.com', 587)
             s.starttls()
